@@ -98,3 +98,9 @@ sudo ufw allow 5000
 
 cp AttCx1/wsgiAtt.py wsgiAtt.py
 
+# allow 5000 port on AWS lightasil Networking page - Networking > Firewall > add 5000
+#gunicorn ...
+# configurar nginx
+#criar certs - ssh
+#configurar project.service
+
