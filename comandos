@@ -1,4 +1,5 @@
-ls -la (l see permissions and a hidden files
+ls -la (l see permissions and a hidden files)
+df -h (available space)
 
 source att-env/bin/activate
 gunicorn --bind 0.0.0.0:5000 -w 4 AttCx1:app
@@ -31,6 +32,7 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo apt-get update 
 sudo apt-get install google-chrome-stable
+google-chrome-stable -version
 
 https://tecadmin.net/install-google-chrome-in-ubuntu/
 install chrome
@@ -47,7 +49,9 @@ unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
 sudo chmod +x /usr/bin/chromedriver
+chromedriver -v
 
 https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.68/
+https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.126/
 
 
