@@ -1,5 +1,6 @@
 
-gunicorn --bind 0.0.0.0:5000 -w 4 AttCx1:app
+source att-env/bin/activate
+unicorn --bind 0.0.0.0:5000 -w 4 AttCx1:app
 
 export FLASK_APP=AttCx1
 
