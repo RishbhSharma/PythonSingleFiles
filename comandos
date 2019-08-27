@@ -2,7 +2,7 @@ ls -la (l see permissions and a hidden files
 
 source att-env/bin/activate
 gunicorn --bind 0.0.0.0:5000 -w 4 AttCx1:app
-gunicorn --bind 0.0.0.0:5000 --timeout=30 --access-logfile ~gun.log -w 4 wsgiAtt:app
+gunicorn --bind 0.0.0.0:5000 --timeout=90 --access-logfile ~gun.log -w 4 wsgiAtt:app
 
 
 export FLASK_APP=AttCx1
