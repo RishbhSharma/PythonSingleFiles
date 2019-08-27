@@ -1,16 +1,24 @@
+### SEQUENCIA DE COMANDOS NO FINAL DO ARQUIVO ####
+
 ls -la (l see permissions and a hidden files)
 df -h (available space)
+chmod +w filename
+chmod 400 key.pem
+
+
+git config --global user.name "user_name"
+# update repo - run inside the directory
+git checkout 
 
 source att-env/bin/activate
 gunicorn --bind 0.0.0.0:5000 -w 4 AttCx1:app
-gunicorn --bind 0.0.0.0:5000 --timeout=90 --access-logfile ~gun.log -w 4 wsgiAtt:app
+gunicorn --bind 0.0.0.0:5000 --timeout=90 --access-logfile log/gun.log -w 4 wsgiAtt:app
 
 
 export FLASK_APP=AttCx1
 
 
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployme$
-
 https://www.digitalocean.com/community/tutorials/how-to-serve-flask-application$
 
 /etc/systemd/system/myproject.service
@@ -22,8 +30,6 @@ sudo systemctl restart nginx
 sudo service nginx reload
 
 sudo ufw allow 'Nginx Full'
-
-
 
 
 update chrome / install
@@ -44,7 +50,7 @@ sudo apt-get -y install google-chrome-stable
 CHROMEDRIVER
 sudo apt-get update
 sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
-wget https://chromedriver.storage.googleapis.com/76.0.3809.68/chromedriver_linux64.zip
+wget https://chromedriver.storage.googleapis.com/76.0.3809.126/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
@@ -54,4 +60,41 @@ chromedriver -v
 https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.68/
 https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.126/
 
+=====================================
+## SEQUENCIA DE COMANDOS ##
+#comandos para confugrar o servidor:
+#rodar a partir da pasta ~
+mkdir log
+mkdir pesquisas
+git clone https://github.com/dgranuzzo/AttCx1
+
+sudo apt update
+sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+
+sudo apt-get install python3-venv
+python3.6 -m venv att-env
+
+source att-env/bin/activate
+
+pip install wheel
+pip install -r AttCx1/requirements.txt
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add 
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+google-chrome-stable -version
+
+sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
+wget https://chromedriver.storage.googleapis.com/76.0.3809.126/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin/chromedriver
+sudo chown root:root /usr/bin/chromedriver
+sudo chmod +x /usr/bin/chromedriver
+chromedriver -v
+
+sudo apt install gunicorn
+sudo ufw allow 5000
+
+cp AttCx1/wsgiAtt.py wsgiAtt.py
 
