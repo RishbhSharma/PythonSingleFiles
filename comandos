@@ -109,3 +109,15 @@ cp AttCx1/wsgiAtt.py wsgiAtt.py
 #criar certs - ssh
 #configurar project.service
 
+
+https://tecadmin.net/install-phantomjs-on-ubuntu/
+sudo apt-get update
+sudo apt-get install build-essential chrpath libssl-dev libxft-dev
+sudo apt-get install libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
+
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+sudo tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/
+
+#Now simply create a soft link phantomjs binary file to systems bin dirctory as below:
+sudo ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
+phantomjs --version
