@@ -1,4 +1,8 @@
 ### SEQUENCIA DE COMANDOS NO FINAL DO ARQUIVO ####
+# na pasta do usuario:
+chmod +x ./initiateServer.sh
+./initiateServer.sh
+
 
 ls -la (l see permissions and a hidden files)
 df -h (available space)
