@@ -125,3 +125,14 @@ sudo tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/
 #Now simply create a soft link phantomjs binary file to systems bin dirctory as below:
 sudo ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
 phantomjs --version
+
+##FIREFOX - verificar release em    https://github.com/mozilla/geckodriver/releases
+sudo install firefox
+wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+### VERIFIQUE A VERSAO 0.24.0
+tar -xvzf geckodriver-v0.24.0-linux64.tar.gz  
+chmod +x geckodriver
+export PATH=$PATH:/home/ubuntu ##path-to-extracted-file/
+
+
+
