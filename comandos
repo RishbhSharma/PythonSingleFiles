@@ -103,6 +103,7 @@ sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
 sudo chmod +x /usr/bin/chromedriver
 chromedriver -v
+export PATH=$PATH:/usr/bin/chromedriver
 
 sudo apt install gunicorn
 sudo ufw allow 5000
