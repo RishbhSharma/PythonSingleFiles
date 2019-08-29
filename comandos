@@ -129,7 +129,7 @@ sudo ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/loc
 phantomjs --version
 
 ##FIREFOX - verificar release em    https://github.com/mozilla/geckodriver/releases
-sudo apt install firefox
+sudo apt install firefox xvfb
 wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
 ### VERIFIQUE A VERSAO 0.24.0
 tar -xvzf geckodriver-v0.24.0-linux64.tar.gz  
@@ -137,6 +137,18 @@ chmod +x geckodriver
 sudo cp geckodriver /usr/bin/geckodriver
 export PATH=$PATH:/home/ubuntu ##path-to-extracted-file/
 
+##bug issues:
+##https://blog.testproject.io/2018/02/20/chrome-headless-selenium-python-linux-servers/
+
+##firefox headless - https://medium.com/@griggheo/running-selenium-webdriver-tests-using-firefox-headless-mode-on-ubuntu-d32500bb6af2
+sudo apt-add-repository ppa:mozillateam/firefox-next
+sudo apt-get update
+sudo apt-get install firefox xvfb
+Xvfb :10 -ac &
+export DISPLAY=:10
+firefox
+(kill with ctrl+C)
+test.py
 
 
 
