@@ -73,9 +73,11 @@ https://chromedriver.storage.googleapis.com/index.html?path=76.0.3809.126/
 ## SEQUENCIA DE COMANDOS ##
 #comandos para confugrar o servidor:
 #rodar a partir da pasta ~
+git clone https://github.com/dgranuzzo/AttCx1
 mkdir log
 mkdir pesquisas
-git clone https://github.com/dgranuzzo/AttCx1
+mv AttCx1/wsgiAtt.py wsgiAtt.py
+
 
 sudo apt update
 sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
@@ -127,12 +129,14 @@ sudo ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/loc
 phantomjs --version
 
 ##FIREFOX - verificar release em    https://github.com/mozilla/geckodriver/releases
-sudo install firefox
+sudo apt install firefox
 wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
 ### VERIFIQUE A VERSAO 0.24.0
 tar -xvzf geckodriver-v0.24.0-linux64.tar.gz  
 chmod +x geckodriver
+sudo cp geckodriver /usr/bin/geckodriver
 export PATH=$PATH:/home/ubuntu ##path-to-extracted-file/
+
 
 
 
