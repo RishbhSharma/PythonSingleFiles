@@ -88,7 +88,8 @@ sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev p
 sudo apt-get install python3-venv
 python3.6 -m venv att-env
 
-
+sudo apt install npm
+sudo npm install -g phantomjs 
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add 
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
