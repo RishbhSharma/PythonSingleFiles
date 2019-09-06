@@ -27,6 +27,7 @@ SENHACXAQUI = "1234"
 
 driverCxaqui = criaDriver()
 retorno = loginCxaqui(driverCxaqui)
+print (retorno)
 
 
 def criaDriver():
@@ -67,7 +68,7 @@ def criaDriver():
      print("escolhido driver PhantomJS")
   return driver
   
-ef loginCxaqui(driver):
+def loginCxaqui(driver):
   try:
     print("login cx aqui")
     driver.get("https://www.caixaqui.gov.br")
@@ -76,7 +77,7 @@ ef loginCxaqui(driver):
     time.sleep(5)
 
     html = driver.page_source
-    print(html)
+    #print(html)
     filename = "arquivoCXAquihtml"
     arquivo = open(filename, "w+")
     arquivo.write(arquivo)
@@ -97,10 +98,12 @@ ef loginCxaqui(driver):
     elem.send_keys(SENHACXAQUI)
 
     driver.implicitly_wait
+    print("before btn click")
     driver.find_element_by_class_name("btn-azul").click()
 
     html = driver.page_source
     resp1 = html.find("000")
+    print(html)
 
     if (resp1 > 0):
         retorno = True
