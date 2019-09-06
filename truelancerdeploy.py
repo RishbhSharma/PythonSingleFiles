@@ -25,10 +25,11 @@ from PIL import Image
 DRIVER = 'CHROME'
 SENHACXAQUI = "1234"
 
-driverCxaqui = criaDriver()
-retorno = loginCxaqui(driverCxaqui)
-print (retorno)
-
+def main():
+  driverCxaqui = criaDriver()
+  retorno = loginCxaqui(driverCxaqui)
+  print (retorno)
+  print("end")
 
 def criaDriver():
   print("em cria Driver")
@@ -113,4 +114,7 @@ def loginCxaqui(driver):
     return retorno
   except:
     print("erro no login")
-    
+   
+if __name__=="__main__":
+  main()
+
