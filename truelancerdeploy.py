@@ -94,7 +94,7 @@ def loginCxaqui(driver):
 
     driver.implicitly_wait
     elem = driver.find_element_by_name("convenio")
-    print("após find.elem.convenio")
+    print("apos find.elem.convenio")
     elem.clear()
     elem.send_keys("000450001")
     print("driver find convenio após sendkeys")
@@ -126,4 +126,5 @@ def loginCxaqui(driver):
 if __name__=="__main__":
   app.run(threaded=True)
   app.debug = True
+  #main()
 
