@@ -26,14 +26,14 @@ from PIL import Image
 DRIVER = 'CHROME'
 SENHACXAQUI = "1234"
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
-@main.route('/')
-def index():
-    response = principal()
-    return "initial" + str(response)
+#@main.route('/')
+#def index():
+#    response = principal()
+#    return "initial" + str(response)
 
-def principal():
+def main():
   driverCxaqui = criaDriver()
   retorno = loginCxaqui(driverCxaqui)
   print (retorno)
@@ -97,7 +97,7 @@ def loginCxaqui(driver):
     print("apos find.elem.convenio")
     elem.clear()
     elem.send_keys("000450001")
-    print("driver find convenio após sendkeys")
+    print("driver find convenio apos sendkeys")
     elem = driver.find_element_by_name("login")
     elem.clear()
     elem.send_keys("usuario")
@@ -124,7 +124,7 @@ def loginCxaqui(driver):
     print("erro no login")
    
 if __name__=="__main__":
-  app.run(threaded=True)
-  app.debug = True
-  #main()
+  #app.run(threaded=True)
+  #app.debug = True
+  main()
 
