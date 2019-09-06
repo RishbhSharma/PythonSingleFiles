@@ -1,3 +1,4 @@
+from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash, session, jsonify
 from selenium import webdriver
 #from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, UnexpectedAlertPresentException, TimeoutException
@@ -25,7 +26,14 @@ from PIL import Image
 DRIVER = 'CHROME'
 SENHACXAQUI = "1234"
 
-def main():
+app = Flask(__name__)
+
+@main.route('/')
+def index():
+    response = principal()
+    return "initial" + str(response)
+
+def principal():
   driverCxaqui = criaDriver()
   retorno = loginCxaqui(driverCxaqui)
   print (retorno)
@@ -116,5 +124,6 @@ def loginCxaqui(driver):
     print("erro no login")
    
 if __name__=="__main__":
-  main()
+  app.run(threaded=True)
+  app.debug = True
 
