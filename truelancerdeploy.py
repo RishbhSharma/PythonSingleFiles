@@ -23,7 +23,7 @@ import time
 import subprocess
 from PIL import Image
 
-DRIVER = 'CHROME'
+DRIVER = 'FIREFOX' # Chrome fails to start
 SENHACXAQUI = "1234"
 
 #app = Flask(__name__)
