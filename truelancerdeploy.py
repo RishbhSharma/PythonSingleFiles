@@ -43,10 +43,10 @@ def criaDriver():
   print("em cria Driver")
   if DRIVER =='CHROME':
      options = Options()
-     chrome_options = webdriver.ChromeOptions()
+     #options = webdriver.ChromeOptions()
      #chrome_options.add_argument('--kiosk-printing')
-     chrome_options.add_argument('--no-sandbox')
-     chrome_options.add_argument('--headless')
+     options.add_argument('--no-sandbox')
+     options.add_argument('--headless')
      options.add_argument("--disable-dev-shm-usage")
      options.add_argument("--disable-extensions")
      options.add_argument("start-maximized")
@@ -62,9 +62,8 @@ def criaDriver():
      from pyvirtualdisplay import Display
      display = Display(visible=0, size=(1024, 768))
      display.start()
-
+     arquivolog = os.path.join(homedir + '/log/chromedr.log' )
      driver = webdriver.Chrome('/usr/bin/chromedriver',options=options, service_args=['--verbose', '--log-path=/home/ubuntu/log/chromedr.log'])
-     print(driver.title)
 
   elif DRIVER == 'PHANTOMJS':
      driver = webdriver.PhantomJS('/usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',service_args=['--ssl-protocol=any'])
