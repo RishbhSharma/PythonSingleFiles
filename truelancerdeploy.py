@@ -88,7 +88,7 @@ def loginCxaqui(driver):
     #print(html)
     filename = "arquivoCXAquihtml"
     arquivo = open(filename, "w+")
-    arquivo.write(arquivo)
+    arquivo.write(html)
     arquivo.close()
 
     driver.implicitly_wait
@@ -102,6 +102,7 @@ def loginCxaqui(driver):
     elem.send_keys("usuario")
     
     elem = driver.find_element_by_name("password")
+    print("apos find.elem.password")
     elem.clear()
     elem.send_keys(SENHACXAQUI)
 
@@ -117,8 +118,9 @@ def loginCxaqui(driver):
         retorno = True
     else:
         retorno = False
-
     return retorno
+  except UnexpectedAlertPresentException:
+    print("erro alert box is present")
   except:
     print("erro no login")
    
